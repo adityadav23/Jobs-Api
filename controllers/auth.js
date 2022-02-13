@@ -3,18 +3,10 @@ const {StatusCodes} = require('http-status-codes')
 const User = require('../models/User')
 
 const register = async (req,res)=>{
-    //destructuring req.body
-    const {name, email, password} = req.body
-    
-    //hash salt
-    const salt = await bcrypt.genSalt(10)
-    const hashedPassword = await bcrypt.hash(password,salt)
 
-    //creating temp userObject
-    const tempUser = {name, email, password:hashedPassword}
     // upload to db
-    const user = await User.create({...tempUser})
-    
+    const user = await User.create({...req.body})
+
     res.status(StatusCodes.CREATED).json({user})
 
 
