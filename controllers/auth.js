@@ -15,9 +15,12 @@ const register = async (req,res)=>{
                          expiresIn:'30d'
                      })
 
+<<<<<<< HEAD
     res.status(StatusCodes.CREATED).json({user:{name:user.name}, token})
 
 
+=======
+>>>>>>> 751bdfb806f43bb02378ab756740e4dc77f8734c
 }
 const login = async (req, res) => {
     const { email, password } = req.body
