@@ -39,11 +39,7 @@ const UserSchema = new mongoose.Schema({
               expiresIn:process.env.JWT_LIFETIME
           })
       }
-<<<<<<< HEAD
       //This method checks if provided password is correct 
-=======
-      //This method checks if provided password is correct
->>>>>>> 751bdfb806f43bb02378ab756740e4dc77f8734c
       UserSchema.methods.comparePassword = async function(candidatePassword){
           const isMatch = await bcrypt.compare(candidatePassword,this.password)
           return isMatch
