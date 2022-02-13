@@ -1,21 +1,21 @@
-const getAllJobs = async(req,res)=>{
+const getAllJobs = async (req,res)=>{
     res.send('All jobs')
 }
 
-const getJob = async(req,res)=>{
+const getJob = async (req,res)=>{
     res.send('get a job ')
 
 }
 
-const createJob = async(req,res)=>{
+const createJob = async (req,res)=>{
     res.send('Job created')
 }
 
-const updateJob = async(req,res)=>{
+const updateJob = async (req,res)=>{
     res.send('Job updated')
 
 }
-const deleteJob = async(req,res)=>{
+const deleteJob = async (req,res)=>{
     res.send('Job deleted')
 }
 

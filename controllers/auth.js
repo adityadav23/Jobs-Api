@@ -1,8 +1,8 @@
-const register = async(req,res)=>{
+const register = async (req,res)=>{
     res.send('User registered')
 }
 
-const login = async(req,res)=>{
+const login = async (req,res)=>{
     res.send('User logged in ')
 
 }
