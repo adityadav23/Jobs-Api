@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
           this.password = await bcrypt.hash(this.password,salt)
           next()
       })
-
+    // this method creates a jwt
       UserSchema.methods.createJWT = function(){
           return jwt.sign({
               userId: this._id, name: this.name
@@ -39,6 +39,11 @@ const UserSchema = new mongoose.Schema({
           {
               expiresIn:process.env.JWT_LIFETIME
           })
+      }
+      //This method checks if provided password is correct
+      UserSchema.methods.comparePassword = async function(candidatePassword){
+          const isMatch = await bcrypt.compare(candidatePassword,this.password)
+          return isMatch
       }
 module.exports = mongoose.model('User', UserSchema)
       
